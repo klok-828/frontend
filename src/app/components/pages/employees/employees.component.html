@@ -1,0 +1,47 @@
+<div>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>name</th>
+      <td mat-cell *matCellDef="let element">
+        <a routerLink="/employeeDetail/{{element.id}}">
+          {{ element.name }}
+        </a>
+      </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="SSN">
+      <th mat-header-cell *matHeaderCellDef>SSN</th>
+      <td mat-cell *matCellDef="let element">{{ element.ssn }}</td>
+    </ng-container>
+  
+    <ng-container matColumnDef="Work Authorization Title">
+      <th mat-header-cell *matHeaderCellDef>Work Authorization Title</th>
+      <td mat-cell *matCellDef="let element">{{ element.price }}</td>
+    </ng-container>
+  
+    <ng-container matColumnDef="Cell Phone">
+      <th mat-header-cell *matHeaderCellDef>Phone Number</th>
+      <td mat-cell *matCellDef="let element; let j = index">
+        <button>Delete</button>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Email">
+        <th mat-header-cell *matHeaderCellDef>Email</th>
+        <td mat-cell *matCellDef="let element; let j = index">
+          <button>Delete</button>
+        </td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                 showFirstLastButtons
+                 aria-label="Select page of periodic elements">
+  </mat-paginator>
+</div>
