@@ -25,6 +25,7 @@ export class EmployeeService {
   }
 
   getEmployeeById(id): Observable<Object> {
-    return this.http.get<Object>(`"https://jsonplaceholder.typicode.com/users/${id}"`);
+    const url = "https://jsonplaceholder.typicode.com/users/" + id;
+    return this.http.get<Object>(url);
   }
 }

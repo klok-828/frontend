@@ -1,4 +1,12 @@
 <p>employee-detail works!</p>
 <div class="container">
+    <table>
+        <tbody>
 
+            <tr *ngFor="let emp of employee | keyvalue">
+                <th>{{ emp.key }}</th>
+                <td>{{ emp.value }}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>

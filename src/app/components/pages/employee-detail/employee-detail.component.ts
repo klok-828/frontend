@@ -9,12 +9,19 @@ import { EmployeeService } from 'src/app/service/employee.service';
 })
 export class EmployeeDetailComponent implements OnInit{
 
+  employee = {};
+
   constructor(private employeeService: EmployeeService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    const employeeId: string = this.route.snapshot.data['employeeId'];
-    console.log(1);
-    // this.employeeService.getEmployeeById(employeeId)
+    const employeeId: string = this.route.snapshot.paramMap.get('employeeId');
+
+    this.employeeService.getEmployeeById(employeeId).subscribe((res) => {
+      console.log(res);
+      this.employee = res;
+      console.log(this.employee)
+    })
+
   }
 
 }

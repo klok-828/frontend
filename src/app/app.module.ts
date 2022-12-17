@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { MatTableModule } from '@angular/material/table'
+import { MatTableModule } from '@angular/material/table';
+import { MatTabsModule } from '@angular/material/tabs';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
@@ -15,10 +19,17 @@ import { EmployeesComponent } from './components/pages/employees/employees.compo
 import { ErrorComponent } from './components/pages/error/error.component';
 import { EmployeeDetailComponent } from './components/pages/employee-detail/employee-detail.component';
 import { HeaderComponent } from './components/header/header.component';
+import { HiringComponent } from './components/pages/hiring/hiring.component';
+import { HousingComponent } from './components/housing/housing.component';
+import { VisaStatusComponent } from './components/pages/visa-status/visa-status.component';
+
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'employee', component: EmployeesComponent},
   {path: 'employeeDetail/:employeeId', component: EmployeeDetailComponent},
+  {path: 'housing', component: HousingComponent},
+  {path: 'hiring', component: HiringComponent},
+  {path: 'visa-status', component: VisaStatusComponent},
   {path: '**', component: ErrorComponent}
 
 ]
@@ -33,10 +44,15 @@ const appRoutes: Routes = [
     ErrorComponent,
     EmployeeDetailComponent,
     HeaderComponent,
+    HiringComponent,
+    HousingComponent,
+    VisaStatusComponent,
   ],
   imports: [
+    BrowserAnimationsModule,
     MatPaginatorModule,
     MatTableModule,
+    MatTabsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
