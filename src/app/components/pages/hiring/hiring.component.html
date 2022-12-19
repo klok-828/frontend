@@ -3,13 +3,37 @@
     <mat-tab-group dynamicHeight>
         <!-- #enddocregion dynamic-height -->
         <mat-tab label="Registration Token">
-            <div class="example-small-box mat-elevation-z4">
-            Small content
+            <div>
+                <div>
+                    <button class="btn">Generate Token</button>
+                    <br>
+                    <label>Token: </label>
+                </div>
+
+                <div>
+                    <form class="form-control">
+                        <input placeholder="email"/>
+                        <button class="btn">Send Email</button>
+                    </form>
+                </div>
             </div>
         </mat-tab>
+
         <mat-tab label="Onboarding Applications">
-            <div class="example-large-box mat-elevation-z4">
-            Large content
+            <div class="example-medium-box">
+                <mat-tab-group dynamicHeight>
+                        <mat-tab label="Pending">
+                            <app-onboardtable></app-onboardtable>
+                        </mat-tab>
+
+                        <mat-tab class="ss" label="Rejected">
+
+                        </mat-tab>
+
+                        <mat-tab label="Approved">
+
+                        </mat-tab>
+                </mat-tab-group>
             </div>
         </mat-tab>
     </mat-tab-group>

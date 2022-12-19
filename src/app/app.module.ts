@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
@@ -20,8 +21,10 @@ import { ErrorComponent } from './components/pages/error/error.component';
 import { EmployeeDetailComponent } from './components/pages/employee-detail/employee-detail.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HiringComponent } from './components/pages/hiring/hiring.component';
-import { HousingComponent } from './components/housing/housing.component';
+import { HousingComponent } from './components/pages/housing/housing.component';
 import { VisaStatusComponent } from './components/pages/visa-status/visa-status.component';
+import { OnboardtableComponent } from './components/onboardtable/onboardtable.component';
+import { ApplicationDetailComponent } from './components/pages/application-detail/application-detail.component';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -30,6 +33,7 @@ const appRoutes: Routes = [
   {path: 'housing', component: HousingComponent},
   {path: 'hiring', component: HiringComponent},
   {path: 'visa-status', component: VisaStatusComponent},
+  {path: 'applicationDetail/:employeeId', component: ApplicationDetailComponent},
   {path: '**', component: ErrorComponent}
 
 ]
@@ -47,9 +51,12 @@ const appRoutes: Routes = [
     HiringComponent,
     HousingComponent,
     VisaStatusComponent,
+    OnboardtableComponent,
+    ApplicationDetailComponent
   ],
   imports: [
     BrowserAnimationsModule,
+    MatExpansionModule,
     MatPaginatorModule,
     MatTableModule,
     MatTabsModule,
